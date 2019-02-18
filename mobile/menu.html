@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+
+    <style>
+
+        #menu
+        {
+            width:50%;
+            height:300px;
+            position:fixed;
+            top:0;
+            right:-75%;
+            background-color:yellow;
+        }
+
+
+        #menu > div
+        {
+            width:100%;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            border-bottom:2px solid black;
+            font-size:30px;
+        }
+
+        
+        @keyframes open-animation {
+            from {}
+            to {right:0}
+        }
+
+
+        .open {
+            animation-name: open-animation;
+            animation-duration: 1s;
+            animation-iteration-count:1;
+            animation-timing-function:ease;
+            animation-fill-mode:forwards;
+        }
+
+
+        @keyframes close-animation {
+            from {right:0;}
+            to {right:-50%}
+        }
+
+
+        .close {
+            animation-name: close-animation;
+            animation-duration: 1s;
+            animation-iteration-count:1;
+            animation-timing-function:ease;
+            animation-fill-mode:forwards;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <button onclick="open_menu()">open menu</button>
+    <br />
+    <br />
+    <br />
+    <button onclick="close_menu()">close menu</button>
+
+    <div id="menu">
+        <div>דף הבית</div>
+        <div>הפרופיל שלי</div>
+        <div>חיפוש</div>
+        <div>דואר</div>
+        <div>צור קשר</div>
+    </div>
+
+
+    <script>
+        function open_menu()
+        {
+            document.getElementById("menu").className = "open";
+        }
+
+        function close_menu()
+        {
+            document.getElementById("menu").className = "close";
+        }
+    </script>
+
+</body>
+</html>

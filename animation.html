@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html">
+
+<html>
+<head>
+    <title></title>
+
+
+    <style>
+        
+        
+    body
+    {
+        margin-top:20px;
+    }
+    
+    
+    /* ----------------------------------------------- */
+    @keyframes rotate-animation {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+
+    .rotate {
+        animation-name: rotate-animation;
+        animation-duration: 2s;
+        animation-iteration-count:infinite;
+        animation-timing-function:linear;
+    }
+    /* ----------------------------------------------- */
+    
+    
+    
+    
+    /* ----------------------------------------------- */
+    @keyframes move-animation {
+        from {}
+        to {left:100%}
+    }
+
+    .move {
+        animation-name: move-animation;
+        animation-duration: 2s;
+        animation-iteration-count:1;
+        animation-timing-function:ease;
+        animation-fill-mode:forwards;
+    }
+    /* ----------------------------------------------- */
+
+    
+    
+    
+    
+    #myDiv
+    {
+       width:100px;
+       height:100px;
+       position:fixed;
+       top:100px;
+       left:0;
+       background-color:Green; 
+    }
+    
+    
+    </style>
+
+
+</head>
+
+<body>
+
+
+<button onclick="clearAll()">clear</button>
+
+<button onclick="rotate()">rotate</button>
+
+<button onclick="move()">move</button>
+
+<div id="myDiv"></div>
+
+
+
+<script>
+
+    function clearAll() {
+        document.getElementById('myDiv').className = "";
+    }
+
+
+    function rotate() {
+        document.getElementById('myDiv').className = "rotate";
+    }
+
+
+    function move() {
+        document.getElementById('myDiv').className = "move";
+    }
+
+</script>
+
+
+</body>
+
+</html>

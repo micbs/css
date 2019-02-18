@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+
+    <style>
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    </style>
+
+
+</head>
+
+<body style="margin:0">
+
+
+    <a href="https://css-tricks.com/the-how-and-why-of-clearing-floats/">
+        the-how-and-why-of-clearing-floats
+    </a>
+
+    <br /><br />
+    <button onclick="fix1()">fix container height</button>
+    <br /><br />
+    <button onclick="fix2()">fix floating divs</button>
+    <br /><br />
+
+    <div id="container" style="width:700px; height:100px; background-color:aqua">
+        
+        <div style="width:300px; float:left; direction:rtl; margin-left:20px; background-color:yellow">
+            הכלבים התפתחו מהזאבים. תוחלת החיים שלהם בדרך כלל היא 10–12 שנים אך כלבים מסוימים כמו למשל כלב כנעני, סכיפרקה וגזעים נוספים של כלבי ציד יכולים לחיות גם בין 18 ל-22 שנים. ככלל, כלבים קטנים מאריכים חיים יותר מכלבים גדולים.
+            הכלב הוא בעל החיים המבוית הקדום ביותר. מחקרים ארכאוזואולוגיים וגנטיים מעידים כי כלבים בויתו מזאבים יותר מפעם אחת החל מלפני עשרות אלפי שנים ברחבי אירואסיה; מחקר גנטי העלה כי מוצאם של כלבי הבית בני ימינו בשושלת מבויתת שגילה לפחות 15,000 שנים ועל פי ממצאי DNA מיטוכונדריאלי נמצא קשר גנטי בין כלבים מודרניים לכלבים שבויתו כבר לפני 33,000 שנים[1]. הציידים-לקטים בני התרבות הנאטופית בארץ ישראל החזיקו כלבים מבויתים כבר לפני כ-15,000 שנים, לפי קבורות כלבים ושרידים אחרים שלהם בשלושה אתרים שונים[2]. לאחר הביות התפתח הכלב לאלפי גזעים שונים. כך, למשל, גובהם של כלבים נע בין סנטימטרים ספורים (כמו במקרה של הצ'יוואווה) לכמעט מטר במקרה של וולפהאונד אירי.
+        </div>
+        
+        <div style="width:300px; float:left; direction:rtl; margin-left:20px; background-color:pink">
+            משקלו של חתול בית בוגר נע בממוצע בין 4–5 קילוגרם. תוחלת החיים הממוצעת נעה בין 10–15 שנים, כאשר חתול מבוית מאריך חיים יותר מחתול רחוב. תוחלת החיים הארוכה ביותר שתועדה היא 38 שנים ושלושה ימים[6] כשהחתולה קרים פאף (Creme Puff) מתה בשנת 2005 באוסטין, טקסס. טמפרטורת הגוף הממוצעת של חתול נעה בין 38.5 למעט יותר מ-39 מעלות צלזיוס.
+        </div>
+
+        <div id="divOrange" style="width:300px; float:left; direction:rtl; margin-left:20px; background-color:orange">
+            שוּעל (שם מדעי: Vulpini) הוא שבט המכיל מספר סוגים של יונקים טורפים במשפחת הכלביים. השועלים מאופיינים בחוטמם הארוך והצר, בזנבם הפרוותי ובמבנה גופם הקטן-בינוני יחסית לאחרים במשפחת הכלביים.
+        </div>
+
+        <div style="width:300px; float:left; direction:rtl; margin-left:20px; background-color:greenyellow">
+            הבבונים הם אוכלי-כול, והם בין הפרימטים האוכלים כמויות גדולות של בשר, אך בדרך כלל הם מסתפקים במזון מהצומח.
+        </div>
+    </div>
+
+
+    <script>
+
+        function fix1()
+        {
+            document.getElementById("container").style.height = "auto";
+            document.getElementById("container").className = "clearfix";
+        }
+
+
+        function fix2()
+        {
+            document.getElementById("divOrange").style.clear = "both";
+        }
+
+
+    </script>
+
+
+</body>
+</html>

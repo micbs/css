@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title></title>
+
+    <style>
+    
+        .flexContainer
+        {
+            width:300px;
+            display:flex;
+            margin:30px 0;
+        }
+    
+    
+        .item
+        {
+            padding:10px 0;
+            flex-grow:1;
+            outline:1px solid black;
+            text-align:center;
+            background-color:white;
+        }
+    
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>flex-direction:row</h1>
+    <div>The flex-direction property defines in which direction the container wants to stack the flex items.</div>
+    <div>The row value stacks the flex items horizontally (from left to right):</div>
+
+    <div class="flexContainer" style="flex-direction:row">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+
+    <div class="flexContainer" style="flex-direction:row-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+
+</body>
+</html>

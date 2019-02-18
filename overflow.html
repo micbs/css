@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+
+<h3>
+    Definition and Usage
+    <br />
+    The overflow property specifies what happens if content overflows an element's box.
+    <br />
+    This property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area.
+    <br />
+    Note: The overflow property only works for block elements with a specified height.
+</h3>
+
+
+
+<button onclick="setSize()">set width and height</button>
+
+<button onclick="setHidden()">set overflow hidden</button>
+
+<button onclick="setVisible()">set overflow visible</button>
+
+<button onclick="setScroll()">set overflow scroll</button>
+
+<button onclick="setAuto()">set overflow auto</button>
+
+<hr />
+
+<div id="div1" style="direction:rtl; background-color:Lime">
+
+משקלו של חתול בית בוגר נע בממוצע בין 4–5 קילוגרם. תוחלת החיים הממוצעת נעה בין 10–15 שנים, כאשר חתול מבוית מאריך חיים יותר מחתול רחוב. תוחלת החיים הארוכה ביותר שתועדה היא 38 שנים ושלושה ימים[6] כשהחתולה קרים פאף (Creme Puff) מתה בשנת 2005 באוסטין, טקסס. טמפרטורת הגוף הממוצעת של חתול נעה בין 38.5 למעט יותר מ-39 מעלות צלזיוס.
+
+לחתול מאפיינים פיזיים ההופכים אותו לטורף מובהק.[7] כשאר בני משפחת החתוליים, נמנה החתול עם המפותחים שבין הטורפים היבשתיים. גופו מותאם במיוחד לציד, בעיקר בלילה, ולאכילת בשר. גם קיבת החתול מותאמת בעיקר לאכילת בשר.[8]
+
+עין החתול דומה במבנה לעין האדם, אך ראיית החתול טובה יותר בלילה (רגישות של פי שישה מעין אדם). באור יום חזק מקבל אישון החתול צורה אופיינית של סדק אנכי צר. בלילה עינו פתוחה לרווחה וזוהרת בחושך עקב החזרת האור מתאים מיוחדים הנמצאים בה (הטפטום). לחתול יש שלושה עפעפיים: עליון, תחתון וצידי; כך הוא יכול לשלוט היטב בגודל פתיחת העין. בעבר חשבו שהחתולים הם עיוורי צבעים, אך בעקבות מחקרים שנעשו התגלה כי הם מבחינים בין צבעים שונים, הגם שאינם מייחסים להם חשיבות (מה שהביא למחשבה זו מלכתחילה).
+
+</div>
+
+
+<script>
+
+    function setSize() {
+
+        document.getElementById("div1").style.width = "300px";
+        document.getElementById("div1").style.height = "300px";
+    }
+
+    function setHidden() {
+
+        document.getElementById("div1").style.overflow = "hidden";
+    }
+
+
+    function setVisible() {
+
+        document.getElementById("div1").style.overflow = "visible";
+    }
+
+
+    function setScroll() {
+
+        document.getElementById("div1").style.overflow = "scroll";
+    }
+
+
+    function setAuto() {
+
+        document.getElementById("div1").style.overflow = "auto";
+    }
+
+
+</script>
+
+
+</body>
+</html>

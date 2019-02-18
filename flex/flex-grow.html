@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title></title>
+
+    <style>
+    
+        .flexContainer
+        {
+            display:flex;
+            margin:20px 0;
+        }
+    
+    
+        .item
+        {
+            flex-grow:1;
+            height:100px;
+            outline:1px solid black;
+            text-align:center;
+            line-height:100px;
+            background-color:white;
+        }
+    
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>flex-grow</h1>
+    <div>The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items</div>
+    
+    <div class="flexContainer">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+
+
+    <div class="flexContainer">
+        <div class="item" style="flex-grow:2">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+
+
+    <div class="flexContainer">
+        <div class="item" style="flex-grow:1">1</div>
+        <div class="item" style="flex-grow:2">2</div>
+        <div class="item" style="flex-grow:3">3</div>
+        <div class="item" style="flex-grow:4">4</div>
+        <div class="item" style="flex-grow:5">5</div>
+        <div class="item" style="flex-grow:6">6</div>
+        <div class="item" style="flex-grow:7">7</div>
+        <div class="item" style="flex-grow:8">8</div>
+        <div class="item" style="flex-grow:9">9</div>
+        <div class="item" style="flex-grow:10">10</div>
+    </div>
+
+</body>
+</html>

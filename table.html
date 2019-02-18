@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+
+
+    <style>
+    
+        body{font-size:20px}
+    
+        table{background-color:Green}
+        tr{background-color:Yellow}
+        td{background-color:red}
+
+        #tbl1 td{width:30px; height:30px}
+
+        #tbl2{border-collapse:collapse}
+        #tbl2 td{padding:0}
+        
+        #tbl3{width:200px; border:10px solid yellow;}        
+    
+        #tbl4{border-collapse:collapse }
+        #tbl4 td{width:50px; height:50px; padding:0}
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <p>
+        cellpadding - The space, in pixels, between the cell wall and the cell content.
+    </p>
+
+
+    <p>
+        cellspacing  - The space, in pixels, between cells.
+    </p>
+
+    
+    <div style="margin-top:40px">Default table</div>
+
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+
+
+    <div style="margin-top:40px">table with cellpadding="20" cellspacing="20"</div>
+
+    <table id="tbl1" cellpadding="20" cellspacing="20">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+
+
+    <div style="margin-top:40px">table with border (if you increase the broder width the table totale width no change)</div>
+
+
+        <table id="tbl3">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+
+
+
+        <div style="margin-top:40px">table with fix columns (no border on table, no padding on td)</div>
+
+        <table id="tbl4">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+
+
+
+
+
+    <div style="margin-top:40px">table without any padding</div>
+
+        <table id="tbl2">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+
+
+
+    <div style="margin-top:40px">table with span</div>
+
+        <table>
+            <tr>
+                <td style="width:100px; text-align:right"><span>1</span></td>
+                <td style="width:100px; text-align:right">2</td>
+                <td style="width:100px; text-align:right">3</td>
+            </tr>
+        </table>
+
+
+
+    <div style="margin-top:40px">table with colspan</div>
+
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td colspan="3">4</td>
+            </tr>
+        </table>
+
+
+
+    <div style="margin-top:40px">table fix width</div>
+
+        <table style="width:100%; border-collapse:collapse">
+            <tr>
+                <td style="width:50px; height:50px; padding:0; background-color:green"></td>
+                <td style="width:100px; height:50px; padding:0; background-color:blue"></td>
+                <td style="width:200px; height:50px; padding:0; background-color:red"></td>
+            </tr>
+        </table>
+
+
+    <div style="margin-top:40px">table with center text</div>
+
+        <table style="width:100%; border-collapse:collapse">
+            <tr>
+                <td style="width:70%; height:100px; padding:10px; font-size:24px; text-align:center; direction:rtl; background-color:green">
+                    לחתול שמיעה חדה המסייעת לו לשמוע קולות מכרסמים ולצודם.
+                </td>
+                <td style="width:30%; padding:0; background-color:blue"></td>
+            </tr>
+        </table>
+
+
+</body>
+</html>

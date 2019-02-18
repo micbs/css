@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title></title>
+
+    <style>
+    
+        .flexContainer
+        {
+            display:flex;
+            margin:30px 0;
+        }
+    
+    
+        .item
+        {
+            width:400px;
+            padding:10px 0;
+            outline:1px solid black;
+            text-align:center;
+            background-color:white;
+        }
+    
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>flex-wrap</h1>
+
+    <div>The nowrap value specifies that the flex items will not wrap (this is default)</div>
+
+    <div class="flexContainer" style="flex-wrap: nowrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+
+    
+    <div>The wrap value specifies that the flex items will wrap if necessary</div>
+    
+    <div class="flexContainer" style="flex-wrap: wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+
+    <div>The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order</div>
+
+    <div class="flexContainer" style="flex-wrap: wrap-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+
+    
+
+
+</body>
+</html>

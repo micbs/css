@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <style>
+
+        .flex-container
+        {
+            background-color:greenyellow;
+        }
+
+        .flex-container > div:nth-child(1)
+        {
+            background-color:burlywood
+        }
+
+        .flex-container > div:nth-child(2)
+        {
+            background-color:darksalmon
+        }
+
+        .flex-container > div:nth-child(3)
+        {
+            background-color:hotpink
+        }
+
+        
+    </style>
+
+</head>
+<body>
+
+    <button onclick="add_display_flex()">add flex to container</button>
+    <button onclick="add_display_inline_flex()">add inline-flex to container</button>
+    <br /><br />
+    <input id="txtWidth" type="text" />
+    <button onclick="add_width()">add container width</button>
+    <input id="txtHeight" type="text" />
+    <button onclick="add_height()">add container height</button>
+    <br /><br />
+    <button onclick="add_flex_direction('row')">add row direction</button>
+    <button onclick="add_flex_direction('column')">add column direction</button>
+    <button onclick="add_flex_wrap('wrap')">add wrep</button>
+    <button onclick="add_flex_wrap('nowrap')">add no wrep</button>
+    <br /><br />
+    justify_content:
+    <button onclick="add_justify_content('flex-start')">flex-start</button>
+    <button onclick="add_justify_content('flex-end')">flex-end</button>
+    <button onclick="add_justify_content('center')">center </button>
+    <button onclick="add_justify_content('space-between')">space-between</button>
+    <button onclick="add_justify_content('space-around')">space-around</button>
+    <button onclick="add_justify_content('space-evenly')">space-evenly</button>
+    <br /><br />
+    align-items:
+    <button onclick="add_align_items('flex-start')">flex-start</button>
+    <button onclick="add_align_items('flex-end')">flex-end</button>
+    <button onclick="add_align_items('center')">center</button>
+    <button onclick="add_align_items('stretch')">stretch</button>
+    <button onclick="add_align_items('baseline')">baseline</button>
+    
+    <hr />
+
+    <input id="txtItemWidth1" type="text" style="width:50px" />
+    <input id="txtItemWidth2" type="text" style="width:50px" />
+    <input id="txtItemWidth3" type="text" style="width:50px" />
+    <button onclick="add_width_to_items()">add width</button>
+    <input id="txtItemHeight1" type="text" style="width:50px" />
+    <input id="txtItemHeight2" type="text" style="width:50px" />
+    <input id="txtItemHeight3" type="text" style="width:50px" />
+    <button onclick="add_height_to_items()">add height</button>
+    <input id="txtItemMargin1" type="text" style="width:70px" />
+    <input id="txtItemMargin2" type="text" style="width:70px" />
+    <input id="txtItemMargin3" type="text" style="width:70px" />
+    <button onclick="add_margin_to_items()">add margin</button>
+    <input id="txtItemPadding1" type="text" style="width:70px" />
+    <input id="txtItemPadding2" type="text" style="width:70px" />
+    <input id="txtItemPadding3" type="text" style="width:70px" />
+    <button onclick="add_padding_to_items()">add padding</button>
+    <br /><br />
+
+    <input id="txtFlexGrow1" type="text" style="width:50px"/>
+    <input id="txtFlexGrow2" type="text" style="width:50px"/>
+    <input id="txtFlexGrow3" type="text" style="width:50px"/>
+    <button onclick="add_flex_grow()">add flex grow</button>
+    <input id="txtFlexShrink1" type="text" style="width:50px" />
+    <input id="txtFlexShrink2" type="text" style="width:50px" />
+    <input id="txtFlexShrink3" type="text" style="width:50px" />
+    <button onclick="add_flex_shrink()">add flex shrink</button>
+    <input id="txtFlexBasis1" type="text" style="width:50px" />
+    <input id="txtFlexBasis2" type="text" style="width:50px" />
+    <input id="txtFlexBasis3" type="text" style="width:50px" />
+    <button onclick="add_flex_basis()">add flex basis</button>
+    <br /><br />
+
+    <input id="txtContent1" type="text" style="width:50px" />
+    <input id="txtContent2" type="text" style="width:50px" />
+    <input id="txtContent3" type="text" style="width:50px" />
+    <button onclick="add_content()">add content</button>
+    <br /><br />
+
+    <hr />
+
+
+
+    <div class="flex-container">
+        <div id="item1">1</div>
+        <div id="item2">2</div>
+        <div id="item3">3</div>
+    </div>
+
+
+
+
+    <script>
+
+        function add_display_flex() {
+            document.querySelector(".flex-container").style.display = 'flex';
+        }
+
+
+        function add_display_inline_flex() {
+            document.querySelector(".flex-container").style.display = 'inline-flex';
+        }
+
+
+        function add_flex_direction(value) {
+            document.querySelector(".flex-container").style.flexDirection = value;
+        }
+
+
+        function add_flex_wrap(value)
+        {
+            document.querySelector(".flex-container").style.flexWrap = value;
+        }
+
+
+        function add_justify_content(value)
+        {
+            document.querySelector(".flex-container").style.justifyContent = value;
+        }
+
+
+        function add_align_items(value)
+        {
+            document.querySelector(".flex-container").style.alignItems = value;
+        }
+
+
+        function add_width() {
+            document.querySelector(".flex-container").style.width = document.querySelector("#txtWidth").value;
+        }
+
+
+        function add_height() {
+            document.querySelector(".flex-container").style.height = document.querySelector("#txtHeight").value;
+        }
+
+
+
+        function add_width_to_items()
+        {
+            document.getElementById("item1").style.width = document.getElementById("txtItemWidth1").value;
+            document.getElementById("item2").style.width = document.getElementById("txtItemWidth2").value;
+            document.getElementById("item3").style.width = document.getElementById("txtItemWidth3").value;
+        }
+
+
+
+        function add_height_to_items()
+        {
+            document.getElementById("item1").style.height = document.getElementById("txtItemHeight1").value;
+            document.getElementById("item2").style.height = document.getElementById("txtItemHeight2").value;
+            document.getElementById("item3").style.height = document.getElementById("txtItemHeight3").value;
+        }
+
+
+        function add_margin_to_items()
+        {
+            document.getElementById("item1").style.margin = document.getElementById("txtItemMargin1").value;
+            document.getElementById("item2").style.margin = document.getElementById("txtItemMargin2").value;
+            document.getElementById("item3").style.margin = document.getElementById("txtItemMargin3").value;
+        }
+
+
+        function add_padding_to_items()
+        {
+            document.getElementById("item1").style.padding = document.getElementById("txtItemPadding1").value;
+            document.getElementById("item2").style.padding = document.getElementById("txtItemPadding2").value;
+            document.getElementById("item3").style.padding = document.getElementById("txtItemPadding3").value;
+        }
+
+
+
+
+        function add_flex_grow()
+        {
+            document.getElementById("item1").style.flexGrow = document.getElementById("txtFlexGrow1").value;
+            document.getElementById("item2").style.flexGrow = document.getElementById("txtFlexGrow2").value;
+            document.getElementById("item3").style.flexGrow = document.getElementById("txtFlexGrow3").value;
+        }
+
+
+        function add_flex_shrink()
+        {
+            document.getElementById("item1").style.flexShrink = document.getElementById("txtFlexShrink1").value;
+            document.getElementById("item2").style.flexShrink = document.getElementById("txtFlexShrink2").value;
+            document.getElementById("item3").style.flexShrink = document.getElementById("txtFlexShrink3").value;
+        }
+
+
+        function add_flex_basis()
+        {
+            document.getElementById("item1").style.flexBasis = document.getElementById("txtFlexBasis1").value;
+            document.getElementById("item2").style.flexBasis = document.getElementById("txtFlexBasis2").value;
+            document.getElementById("item3").style.flexBasis = document.getElementById("txtFlexBasis3").value;
+        }
+
+
+        function add_content()
+        {
+            document.getElementById("item1").innerText = document.getElementById("txtContent1").value;
+            document.getElementById("item2").innerText = document.getElementById("txtContent2").value;
+            document.getElementById("item3").innerText = document.getElementById("txtContent3").value;
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

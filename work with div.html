@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+
+<script type="text/javascript">
+
+function changeBg(myDiv,myColor)
+{
+	myDiv.style.backgroundColor = myColor;
+}
+
+
+</script>
+
+<style type="text/css">
+
+body
+{
+	padding:0px; margin:0px;
+}
+
+#divTop
+{
+	width:100px; height:50px; margin:0 auto; background-color:aqua;
+}
+
+#divBottom
+{
+	width:100px; height:50px; left:50%; margin-left:-50px; background-color:fuchsia; position:absolute; bottom:0px;
+}
+
+#divLeft
+{
+	width:100px; height:50px; left:0px; top:50%; margin-top:-25px; background-color:green; position:absolute;
+}
+
+#divRight
+{
+	width:100px; height:50px; right:0px; top:50%; margin-top:-25px; background-color:lime; position:absolute;
+}
+
+#divMiddle
+{
+	width:100px; height:50px; left:50%; top:50%; margin-top:-25px; background-color:blue; margin-left:-50px; position:absolute;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="divTop" onmouseover="changeBg(this,'red');" onmouseout="changeBg(this,'aqua');"></div>
+
+<div id="divLeft" onmouseover="changeBg(this,'pink');" onmouseout="changeBg(this,'green');"></div>
+
+
+<div id="divMiddle" onmouseover="changeBg(this,'gray');" onmouseout="changeBg(this,'blue');"></div>
+
+
+
+<div id="divRight" onmouseover="changeBg(this,'yellow');" onmouseout="changeBg(this,'lime');"></div>
+
+
+
+<div id="divBottom" onmouseover="changeBg(this,'blue');" onmouseout="changeBg(this,'fuchsia');"></div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title></title>
+
+    <style>
+    
+        .flexContainer
+        {
+            display:flex;
+            margin:20px 0;
+        }
+    
+    
+        .item
+        {
+            flex-grow:1;
+            height:100px;
+            outline:1px solid black;
+            text-align:center;
+            line-height:100px;
+            background-color:white;
+        }
+    
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>order</h1>
+    <div>The order property specifies the order of the flex items.</div>
+    
+    <div class="flexContainer">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+
+
+    <div class="flexContainer">
+        <div class="item" style="order:5">1</div>
+        <div class="item" style="order:6">2</div>
+        <div class="item" style="order:8">3</div>
+        <div class="item" style="order:1">4</div>
+        <div class="item" style="order:7">5</div>
+        <div class="item" style="order:3">6</div>
+        <div class="item" style="order:4">7</div>
+        <div class="item" style="order:10">8</div>
+        <div class="item" style="order:9">9</div>
+        <div class="item" style="order:2">10</div>
+    </div>
+
+
+</body>
+</html>

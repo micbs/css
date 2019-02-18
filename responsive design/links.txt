@@ -1,0 +1,47 @@
+﻿
+================================================
+CSS Pixel Widths
+https://www.canbike.org/CSSpixels/
+================================================
+
+
+================================================
+Hardware + CSS Pixels in the Age of Retina Display
+http://www.howdesign.com/featured/hardware-css-pixels-retina-display/
+================================================
+
+
+================================================
+The Lengths of CSS 
+https://css-tricks.com/the-lengths-of-css/
+================================================
+
+
+================================================
+CSS px is an Angular Measurement
+http://inamidst.com/stuff/notes/csspx
+================================================
+
+================================================
+How a CSS pixel size is calculated?
+https://stackoverflow.com/questions/27382331/how-a-css-pixel-size-is-calculated
+================================================
+
+================================================
+A Look Into CSS Units: Pixels, EM, and Percentage
+https://www.hongkiat.com/blog/css-units/
+================================================
+
+
+================================================
+what exactly is device pixel ratio?
+https://stackoverflow.com/questions/8785643/what-exactly-is-device-pixel-ratio
+================================================
+
+
+
+https://www.youtube.com/watch?v=9F7AotMI100
+
+
+https://www.youtube.com/watch?v=d0PQxSqP8cQ
+

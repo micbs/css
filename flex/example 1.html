@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <style>
+    
+        #fileUpload
+        {
+            display:flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size:25px;
+            background-color:Yellow;
+        }
+        
+        #fileUpload > input[type=radio]
+        {
+            width:25px; 
+            height:25px; 
+            margin-left:4px;
+            -moz-transform: scale(1.8); 
+        }
+    
+    </style>
+
+</head>
+<body>
+
+    <div id="fileUpload">
+        <div style="margin-left:5px; padding:5px; background-color:green;">בחר קבצים</div>
+        <label for="radioYes" style="margin-left:18px">כן</label>
+        <input type="radio" id="radioYes" name="fileUploadRadio" />
+        <label for="radioNo" style="margin-left:18px">לא</label>
+        <input type="radio" id="radioNo" name="fileUploadRadio" />
+    </div>
+
+</body>
+</html>
