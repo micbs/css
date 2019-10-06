@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <style>
+
+        body{margin:0}
+
+        .grid-container
+        {
+            height:100vh;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-rows:1fr 1fr;
+        }
+
+
+        .item:nth-child(3)
+        {
+            grid-column-start:1;
+            grid-column-end:3;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="item" style="background-color:yellow">1</div>
+        <div class="item" style="background-color:red">2</div>
+        <div class="item" style="background-color:blue">3</div>
+    </div>
+
+
+</body>
+</html>
