@@ -1,0 +1,49 @@
+﻿
+
+
+min-content
+=========================================
+Using min-content will give you a track that is as small as 
+it can be without causing overflow. 
+Therefore, when used as a column size, 
+the content will softly wrap wherever possible. 
+The track becoming the size of the longest word in the column 
+or largest fixed-size element.
+
+
+רוחב העמודה יהיה בגודל התוכן לאחר שבירה
+
+
+grid-template-columns:min-content 90%;
+=========================================
+
+
+
+max-content
+=========================================
+Using max-content will cause the content to not 
+do any soft-wrapping at all. In a column, 
+any string of text will unwrap which may cause overflow.
+
+התוכן לא ישבר אפילו אם זה יגרום סרגל גלילה תחתון 
+
+grid-template-columns:max-content 90%;
+=========================================
+
+
+
+fit-content
+=========================================
+The fit-content keyword can only be used by passing in a value. 
+That value becomes the max that this track will grow to. 
+Therefore, the track will act like max-content with the content 
+unwrapping and stretching out until it hits the value you passed in. 
+At that point, it will start wrapping as normal. 
+So your track may be smaller than the value you pass in, 
+but never larger.
+
+grid-template-columns:fit-content(100px);
+אם התוכן ללא שבירה קטן מ 100 פיקסל אז הרוחב יהיה בגודל של התוכן
+אם התוכן ללא שבירה גדול מ 100 פיקסל אז התוכן ישבר עד שהוא יהיה קטן מ 100 פיקסל
+אם התוכן לאחר שבירה עדייו גדול מ 100 פיקסל אז הוא לא יחתך גם אם יווצר סרגל גלילה תחתון
+=========================================

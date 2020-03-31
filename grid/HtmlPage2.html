@@ -10,14 +10,14 @@
 
         .grid-container
         {
-            height:100vh;
+            
             display:grid;
             grid-template-columns:1fr 1fr;
-            grid-template-rows:1fr 1fr;
+            grid-template-rows:auto auto;
         }
 
 
-        .item:nth-child(3)
+        .big
         {
             grid-column-start:1;
             grid-column-end:3;
@@ -29,7 +29,13 @@
 <body>
 
     <div class="grid-container">
-        <div class="item" style="background-color:yellow">1</div>
+        <div class="item big" style="background-color:yellow">1</div>
+        <div class="item" style="background-color:red">2</div>
+        <div class="item" style="background-color:blue">3</div>
+        <div class="item big" style="background-color:yellow">1</div>
+        <div class="item" style="background-color:red">2</div>
+        <div class="item" style="background-color:blue">3</div>
+        <div class="item big" style="background-color:yellow">1</div>
         <div class="item" style="background-color:red">2</div>
         <div class="item" style="background-color:blue">3</div>
     </div>
