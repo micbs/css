@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+    <title></title>
+
+	<meta charset="utf-8" />
+
+    <style>
+
+        @font-face 
+        {
+          font-family:OpenSansHebrew;
+          src:url('../fonts/opensanshebrew-regular-webfont.woff');
+          font-style:normal;
+          font-weight:400;
+        }
+
+
+        @font-face 
+        {
+          font-family:OpenSansHebrewBold;
+          src:url('../fonts/opensanshebrew-bold-webfont.woff');
+          font-style:normal;
+          font-weight:400;
+        }
+
+
+
+        body{margin:0; font-family:OpenSansHebrew; color:#333; background-color:antiquewhite}
+
+
+        #MyGrid
+        {
+            display:grid;
+            width:100%;
+            /*margin-left:5%;*/
+            margin-top:20px;
+            grid-template-columns:20% 20% 20% 20% 20%;
+            grid-template-rows:50px 50px;
+            background-color:white;
+        }
+
+
+        #MyGrid > div
+        {
+            padding:2px 5px;
+            font-size:3vw;
+        }
+
+
+        .letter
+        {
+            grid-column:1/2;
+            grid-row:span 2;
+            /*background-color:yellow;*/
+        }
+
+
+        .letter > img
+        {
+            width:100%;
+            display:block;
+        }
+
+
+        .status
+        {
+            grid-column:5/6;
+            grid-row:span 2;
+            padding:10px !important;
+            margin:0 auto;
+            background-color:aqua;
+        }
+
+
+        .status > img
+        {
+            height:80px;
+            display:block;
+        }
+
+
+        .date
+        {
+            grid-column:4/5;
+            text-align:right;
+            /*align-self: start;
+            justify-self:end;
+            margin-right:5%;*/
+            /*background-color:greenyellow;*/
+        }
+
+
+        .surgeryName
+        {
+            grid-column:2/4;
+            text-align:right;
+            /*align-self: start;
+            justify-self:end;*/
+            /*background-color:darkseagreen;*/
+        }
+
+
+        .personId
+        {
+            grid-column:4/5;
+            text-align:right;
+            align-self: end;
+            color:#00ADEF;
+            /*background-color:fuchsia;*/
+        }
+
+
+        .firstName
+        {
+            grid-column:3/4;
+            text-align:right;
+            align-self: end;
+            font-family:OpenSansHebrewBold;
+            /*background-color:antiquewhite;*/
+        }
+
+
+        .lastName
+        {
+            grid-column:2/3;
+            text-align:right;
+            align-self: end;
+            font-family:OpenSansHebrewBold;
+            /*background-color:darksalmon;*/
+        }
+
+
+        .space
+        {
+            grid-column:1/6;
+            background-color:red;
+        }
+
+
+        @media screen and (min-width:700px)
+        {
+            #MyGrid
+            {
+                display:grid;
+                width:70%;
+                margin:20px auto 0;
+                grid-template-columns:auto;
+                background-color:white;
+            }
+
+            
+            #MyGrid > div
+            {
+                padding:5px;
+                font-size:2vw;
+            }
+
+            
+            .letter
+            {
+                grid-column:1/2;
+                align-self: center;
+                justify-self:center;
+            }
+
+            
+            .letter > img
+            {
+           
+            }
+
+
+            .status
+            {
+                grid-column:2/3;
+                align-self: center;
+                justify-self:center;
+            }
+
+
+            .status > img
+            {
+           
+            }
+
+
+            .surgeryName
+            {
+                grid-column:3/4;
+                align-self: center;
+                justify-self:center;
+            }
+
+            
+            .date
+            {
+                grid-column:4/5;
+                align-self: center;
+                justify-self:center;
+            }
+
+        
+            .firstName
+            {
+                grid-column:5/6;
+                align-self: center;
+                justify-self:center;
+            }
+
+
+            .lastName
+            {
+                grid-column:6/7;
+                align-self: center;
+                justify-self:center;
+            }
+
+            
+            .personId
+            {
+                grid-column:7/8;
+                align-self: center;
+                justify-self:center;
+            }
+
+
+            .space
+            {
+                grid-column:1/8;
+                background-color:red;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <div id="MyGrid">
+        <div class="letter"><!--<img src="../images/file.png" />--></div>
+        <div class="lastName">אורנשטיין</div>
+        <div class="firstName">משה</div>
+        <div class="personId">032989653</div>
+        <div class="status"><img src="../images/redX.png" /></div>
+        <div class="surgeryName">טיפול ברך ימין</div>
+        <div class="date">21/11/2019</div>
+        <div class="space"></div>
+        
+        <!--<div class="letter" style="grid-row:3/4"><img src="../images/file.png" /></div>
+        <div class="lastName" style="grid-row:3/4">אורנשטיין</div>
+        <div class="firstName" style="grid-row:3/4">משה</div>
+        <div class="personId" style="grid-row:3/4">032989653</div>
+        <div class="status" style="grid-row:3/4"><img src="../images/greenV.png" /></div>
+        <div class="surgeryName" style="grid-row:3/4">טיפול ברך ימין</div>
+        <div class="date" style="grid-row:3/4">21/11/2019</div>-->
+            
+        
+
+        
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+#grid
+{
+    display: inline-grid;    
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    background-color: black;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="grid">
+    <div></div>
+</div>
+
+
+
+<script>
+
+var myDiv = document.querySelector("#grid div");
+myDiv.style.backgroundColor = "white";
+
+let column_start = 1;
+let row_start = 1;
+
+setInterval(() => {
+    myDiv.style.gridColumnStart = column_start;
+    myDiv.style.gridRowStart = row_start;
+    column_start++;
+    
+    if(column_start == 4)
+    {
+        column_start = 1;
+        row_start++;
+    }
+
+    if(row_start == 4)
+    {
+        row_start = 1;
+    }
+
+}, 700);
+
+</script>
+
+
+
+</body>
+
+</html>
