@@ -31,18 +31,27 @@
 
 
 
-        body{margin:0; font-family:OpenSansHebrew; color:#333; background-color:transparent}
+        body{margin:10vw 0 0 0; font-family:OpenSansHebrew; color:#333; background-color:transparent}
+
+
+        body > div:nth-child(2)
+        {
+            border:0;
+        }
+
+
 
 
         .MyGrid
         {
             display:grid;
-            width:100vw;
-            height:20vw;
-            
-            grid-template-columns:20% 5% 35% 20% 20%;
+            width:90vw;
+            height:18vw;
+            margin-left:5vw;
+            grid-template-columns:20% 20% 20% 20% 20%;
             grid-template-rows:50% 50%;
-            background-color:white;
+            border-top:0.2vw #AAA solid;
+            /*background-color:yellow;*/
         }
 
 
@@ -82,16 +91,16 @@
             display:block;
         }
 
+        .status > div
+        {
+            display:none;
+        }
 
         .date
         {
             grid-column:4/5;
             text-align:right;
-            padding-bottom:5px;
-            /*align-self: start;
-            justify-self:end;
-            margin-right:5%;*/
-            /*background-color:greenyellow;*/
+            padding-top:1vw;
         }
 
 
@@ -99,10 +108,7 @@
         {
             grid-column:2/4;
             text-align:right;
-            padding-bottom:5px;
-            /*align-self: start;
-            justify-self:end;*/
-            /*background-color:darkseagreen;*/
+            padding-top:1vw;
         }
 
 
@@ -112,7 +118,7 @@
             text-align:right;
             align-self: end;
             color:#00ADEF;
-            padding-bottom:5px;
+            padding-bottom:1vw;
             /*background-color:fuchsia;*/
         }
 
@@ -122,7 +128,7 @@
             grid-column:3/4;
             text-align:right;
             align-self: end;
-            padding-bottom:5px;
+            padding-bottom:1vw;
             font-family:OpenSansHebrewBold;
             /*background-color:antiquewhite;*/
         }
@@ -133,7 +139,7 @@
             grid-column:2/3;
             text-align:right;
             align-self: end;
-            padding-bottom:5px;
+            padding-bottom:1vw;
             font-family:OpenSansHebrewBold;
             /*background-color:darksalmon;*/
         }
@@ -144,62 +150,79 @@
            display:none;
         }
 
+        .surgeryCode
+        {
+            display:none;
+        }
+
+
+
+
+
+
 
         @media screen and (min-width:700px)
         {
+
+            body > div:nth-child(2)
+            {
+                border-top:0.1vw #AAA solid;
+            }
+
+
             .MyGrid
             {
                 display:grid;
                 width:80vw;
                 height:4vw;
                 margin-left:10vw;
-                grid-template-columns:5fr 5fr 10fr 10fr 5fr 10fr 10fr 10fr;
+                grid-template-columns:10fr 10fr 20fr 10fr 10fr 10fr 10fr 10fr;
                 grid-template-rows:auto;
-                border-top:0.2vw #f0f0f0 solid;
-                background-color:white;
+                border-top:0.1vw #AAA solid;
+                /*background-color:green;*/
             }
 
-            
             .MyGrid > div
             {
                 font-size:1.2vw;
                 background-color:transparent;
             }
 
-            
             .letter
             {
                 grid-column:1/2;
                 grid-row:1;
                 height:60%;
                 align-self: center;
-                justify-self:center;
+                justify-self:end;
                 background-color:aqua;
             }
 
-            
             .letter > img
             {
                 height:100%;
                 margin:0;
             }
 
-
             .status
             {
                 grid-column:2/3;
                 grid-row:1;
-                /*align-self: center;
-                justify-self:center;*/
+                align-self:center;
+                justify-self:end;
+                padding:0;
                 background-color:aquamarine;
             }
-
 
             .status > img
             {
                 display:none;
             }
 
+            .status > div
+            {
+                display:block;
+            }
 
             .surgeryName
             {
@@ -212,22 +235,9 @@
                 background-color:burlywood;
             }
 
-            
-            .date
-            {
-                grid-column:4/5;
-                grid-row:1;
-                align-self: center;
-                justify-self:stretch;
-                padding:0;
-                margin:0;
-                background-color:chartreuse;
-            }
-
-
             .surgeryCode
             {
-                grid-column:5/6;
+                grid-column:4/5;
                 grid-row:1;
                 align-self: center;
                 justify-self:stretch;
@@ -237,8 +247,17 @@
                 background-color:darkseagreen;
             }
 
+            .date
+            {
+                grid-column:5/6;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                background-color:chartreuse;
+            }
 
-        
             .firstName
             {
                 grid-column:6/7;
@@ -247,9 +266,9 @@
                 justify-self:stretch;
                 padding:0;
                 margin:0;
+                font-family:OpenSansHebrew;
                 background-color:cornflowerblue;
             }
-
 
             .lastName
             {
@@ -259,10 +278,10 @@
                 justify-self:stretch;
                 padding:0;
                 margin:0;
+                font-family:OpenSansHebrew;
                 background-color:cadetblue;
             }
 
-            
             .personId
             {
                 grid-column:8/9;
@@ -276,15 +295,15 @@
 
 
             
+
             .HeaderGrid
             {
                 display:grid;
                 width:80vw;
                 height:3vw;
                 margin-left:10vw;
-                grid-template-columns:5fr 5fr 10fr 10fr 5fr 10fr 10fr 10fr;
+                grid-template-columns:10fr 10fr 20fr 10fr 10fr 10fr 10fr 10fr;
                 grid-template-rows:auto;
-                
                 /*background-color:yellow;*/
             }
 
@@ -301,8 +320,6 @@
                 color:black;
                 background-color:transparent;
             }
-
-
         }
 
     </style>
@@ -312,9 +329,6 @@
 
 
 <body>
-
-
-    
 
 
     <div class="HeaderGrid">
@@ -334,13 +348,23 @@
         <div class="lastName">אורנשטיין</div>
         <div class="firstName">משה</div>
         <div class="personId">032989653</div>
-        <div class="status"><img src="../images/redX.png" /></div>
+        <div class="status"><img src="../images/redX.png" /><div>נדחה</div></div>
         <div class="surgeryName">טיפול ברך ימין</div>
         <div class="date">21/11/2019</div>
         <div class="surgeryCode">61</div> 
     </div>
 
 
+    <div class="MyGrid">
+        <div class="letter"><img src="../images/file.png" /></div>
+        <div class="lastName">לוי</div>
+        <div class="firstName">דנה</div>
+        <div class="personId">83730986</div>
+        <div class="status"><img src="../images/greenV.png" /><div>אושר</div></div>
+        <div class="surgeryName">טיפול ברך ימין / השתלה מלאה</div>
+        <div class="date">02/05/2012</div>
+        <div class="surgeryCode">65</div>
+    </div>
 
     
 
