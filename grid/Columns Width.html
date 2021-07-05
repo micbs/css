@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <title></title>
+    
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+	<meta charset="utf-8" />
+
+    <style>
+
+
+        #myGrid
+        {
+            width: 500px;
+            display:grid;
+            grid-template-columns: repeat(5,1fr);
+            /* grid-template-columns: repeat(5,min-content); */
+            /* grid-template-columns: repeat(5,max-content); */
+            /* grid-template-columns: repeat(5,auto); */
+        }
+
+        #myGrid > div
+        {
+            direction: rtl;
+            outline:1px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <h2>work with columns width</h2>
+
+    <div id="myGrid">
+        <div>חתול הבית הוא יונק טורף מבוית, מהסוג חתול ממשפחת החתוליים</div>
+        <div>כלב הוא שמו היומיומי של כלב הבית, תת-מין של הזאב המצוי, ממשפחת הכלביים, מסדרת היונקים הטורפים.</div>
+        <div>חתול</div>
+        <div>השפניים ניזונים מצמחים ומפותחים אצלם המעיים</div>
+        <div>לדוב ארבע גפיים, אשר בסוף כולן נמצאים חמישה טפרים ארוכים וחדים. כפות רגליים אלו עשויות לשמש לטיפוס על עצים, לפתיחת קיני טרמיטים וכוורות לרווחה</div>
+    </div>
+
+</body>
+</html>

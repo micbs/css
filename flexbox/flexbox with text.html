@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        #flexbox{display: flex; flex-direction: row; flex-wrap: wrap; width: 800px; margin:auto; background-color: transparent;}
+        #flexbox > div{width:25%; direction: rtl; outline: 1px dashed; padding: 10px; box-sizing:border-box;}
+    </style>
+
+
+</head>
+
+
+
+
+
+<body>
+
+    <h1>Flexbox</h1>
+
+    <div id="flexbox"></div>
+
+
+    <script>
+
+        const url = "https://benshachar.co.il/handlers/Api.ashx?getjsonfile=1&AllowOrigin=1";
+        const MyPromise = fetch(url);
+    
+        MyPromise.then(function(response){
+            return response.text();
+        })
+        .then(function(text){
+            
+            const objJson = JSON.parse(text);
+           
+            for(var item of objJson)
+            {
+                const div = document.createElement("div");
+                div.innerText = item.Description;
+                document.querySelector("#flexbox").appendChild(div);
+            }
+    
+        });
+        
+    </script>
+
+</body>
+</html>

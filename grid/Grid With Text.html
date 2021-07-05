@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+    
+    <meta charset="utf-8" />
+
+    <style>
+
+        .MyGrid
+        {
+            width:800px; margin:auto;
+            display: grid;
+            /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+            /*grid-template-columns:auto auto auto auto;*/
+            /*grid-template-columns:min-content min-content min-content min-content;*/
+            grid-template-columns: 200px 200px 200px 200px;
+            /*width:300px;*/
+            grid-row-gap: 2px;
+            grid-column-gap: 0px;
+            background-color: black;
+        }
+
+        .MyGrid > div
+        {
+            direction: rtl;
+            padding: 10px;
+            background-color: white;
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+<h2>Grid with Text</h2>
+
+<p>The items in the grid always Behaving like box-sizing: border-box</p>
+
+<div class="MyGrid"></div>
+
+
+
+
+
+
+<script>
+
+    const url = "https://benshachar.co.il/handlers/Api.ashx?getjsonfile=1&AllowOrigin=1";
+    const MyPromise = fetch(url);
+
+    MyPromise.then(function(response){
+        return response.text();
+    })
+    .then(function(text){
+        
+        const objJson = JSON.parse(text);
+       
+        for(var item of objJson)
+        {
+            const div = document.createElement("div");
+            div.innerText = item.Description;
+            document.querySelector(".MyGrid").appendChild(div);
+        }
+
+    });
+    
+</script>
+
+
+</body>
+</html>

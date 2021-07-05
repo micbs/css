@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+    <title></title>
+
+    <style>
+    
+        #RadioGrid
+        {
+            display:grid;
+            grid-template-columns:auto min-content;
+            align-items:center;
+            border:1px solid black
+        }
+        
+        label
+        {
+            text-align:right;
+        }
+        
+        input[type=radio]
+        {
+            width:25px; 
+            height:25px;
+            margin:10px;
+        }
+       
+    </style>
+
+</head>
+<body>
+
+
+<div id="RadioGrid">
+    <label for="radio1">אתר הכרויות</label><input type="radio" id="radio1" name="radioButton" />
+    <label for="radio2">חיפוש עבודה</label><input type="radio" id="radio2" name="radioButton" />
+    <label for="radio3">אחר</label><input type="radio" id="radio3" name="radioButton" />
+</div>
+
+
+</body>
+</html>

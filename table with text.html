@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+
+
+    <style>
+
+        table{width:800px; border-collapse:collapse; margin:auto;}
+        tr{border-bottom:1px solid black}
+        td{direction:rtl; vertical-align:top; padding: 10px; background-color:white}
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Table</h1>
+
+    <table id="myTable"></table>
+
+
+
+    <script>
+
+        const NumberOfColumns = 4;
+        const url = "https://benshachar.co.il/handlers/Api.ashx?getjsonfile=1&AllowOrigin=1";
+        const MyPromise = fetch(url);
+
+        MyPromise.then(function (response)
+        {
+            return response.text();
+        })
+            .then(function (text)
+            {
+                const objJson = JSON.parse(text);
+
+                let i = 0;
+                let tr = null;
+
+                for (var item of objJson)
+                {
+                    if (i % NumberOfColumns === 0)
+                    {
+                        if (tr !== null)
+                        {
+                            document.getElementById("myTable").appendChild(tr);
+                        }
+
+                        tr = document.createElement("tr");
+                    }
+
+                    let td = document.createElement("td");
+                    td.innerText = item.Description;
+
+                    tr.appendChild(td);
+
+
+                    if (objJson.length - 1 === i)
+                    {
+                        document.getElementById("myTable").appendChild(tr);
+                    }
+
+                    i++;
+                }
+
+            });
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+    <title></title>
+
+	<meta charset="utf-8" />
+
+    <style>
+
+        @font-face 
+        {
+          font-family:OpenSansHebrew;
+          src:url('../fonts/opensanshebrew-regular-webfont.woff');
+          font-style:normal;
+          font-weight:400;
+        }
+
+
+        @font-face 
+        {
+          font-family:OpenSansHebrewBold;
+          src:url('../fonts/opensanshebrew-bold-webfont.woff');
+          font-style:normal;
+          font-weight:400;
+        }
+
+
+
+
+
+        /****************** mobile **************************************/
+        body{font-family:OpenSansHebrew; margin:0; color:#333;}
+        
+        .MyGrid
+        {
+            display:grid;
+            width:100vw;
+            /*height:300px;*/
+            margin-left:0vw;
+            grid-template-columns:18vw 15vw 23vw 29vw 15vw;
+            grid-template-rows:5.6vw 5.6vw 5.6vw 5.6vw;
+            border-top:0.2vw #AAA solid;
+            /*padding:0.5vw 0;*/
+            /*background-color:yellow;*/
+            background-image:url(../images/triangle.svg);
+            background-repeat:no-repeat;
+            background-size:18%;
+        }
+
+
+        .MyGrid > div
+        {
+            background-color:transparent;
+        }
+
+
+        .moreInfo
+        {
+            grid-column:1/2;
+            grid-row:1/3;
+            align-self:center;
+            width:10vw;
+            margin-left:2vw;
+            font-family:OpenSansHebrewBold;
+            font-size:3.5vw;
+            background-color:yellow;
+        }
+
+
+        .firstNameTitle
+        {
+            grid-column:2/3;
+            grid-row:1/2;
+            align-self:end;
+            text-align:right;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            background-color:aqua;
+        }
+
+
+        .firstName
+        {
+            grid-column:2/3;
+            grid-row:2/3;
+            text-align:right;
+            font-size:4vw;
+            background-color:antiquewhite;
+        }
+
+
+        .lastNameTitle
+        {
+            grid-column:3/4;
+            grid-row:1/2;
+            align-self:end;
+            text-align:right;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            background-color:aquamarine;
+        }
+
+
+        .lastName
+        {
+            grid-column:3/4;
+            text-align:right;
+            font-size:4vw;
+            background-color:darksalmon;
+        }
+
+
+        .InsuredIDTitle
+        {
+            grid-column:4/5;
+            grid-row:1/2;
+            align-self:end;
+            text-align:right;
+            direction:rtl;
+            padding-right:2vw;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            background-color:pink;
+        }
+
+
+        .InsuredID
+        {
+            grid-column:4/5;
+            text-align:right;
+            padding-right:2vw;
+            font-family:OpenSansHebrewBold;
+            font-size:4vw;
+            color:#00ADEF;
+            background-color:lightblue;
+        }
+
+
+        .dateTitle
+        {
+            grid-column:4/5;
+            grid-row:3/4;
+            align-self:end;
+            text-align:right;
+            padding-right:2vw;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            background-color:greenyellow;
+        }
+
+
+        .date
+        {
+            grid-column:4/5;
+            grid-row:4/5;
+            text-align:right;
+            padding-right:2vw;
+            font-size:4vw;
+            background-color:orangered;
+        }
+
+
+        .surgeryNameTitle
+        {
+            grid-column:1/4;
+            grid-row:3/4;
+            align-self:end;
+            text-align:right;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            background-color:deepskyblue;
+        }
+
+
+        .surgeryName
+        {
+            grid-column:1/4;
+            grid-row:4/5;
+            text-align:right;
+            font-size:4vw;
+            background-color:palegreen;
+        }
+
+
+        .surgeryCodeTitle
+        {
+            grid-column:1/5;
+            grid-row:5/6;
+            align-self:end;
+            text-align:right;
+            padding-right:2vw;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            display:none;
+            background-color:gold;
+        }
+
+
+        .surgeryCode
+        {
+            grid-column:1/5;
+            grid-row:6/7;
+            text-align:right;
+            padding-right:2vw;
+            font-size:4vw;
+            display:none;
+            background-color:rosybrown;
+        }
+
+
+        .showLetterTitle
+        {
+            grid-column:1/5;
+            grid-row:7/8;
+            align-self:end;
+            text-align:right;
+            padding-right:2vw;
+            font-family:OpenSansHebrewBold;
+            font-size:3vw;
+            display:none;
+            background-color:cadetblue;
+        }
+
+
+        .showLetter
+        {
+            grid-column:1/5;
+            grid-row:8/9;
+            text-align:right;
+            padding-right:2vw;
+            font-size:4vw;
+            display:none;
+            background-color:fuchsia;
+        }
+
+
+        .statusMobile
+        {
+            grid-column:5/6;
+            grid-row:1/5;
+            display:flex;
+            align-items:center;
+            text-align:center;
+            font-size:3.5vw;
+            color:white;
+        }
+
+
+        .statusMobileBottom
+        {
+            grid-column:5/6;
+            grid-row:5/9;
+            display:none;
+        }
+
+        .ApprovalColor
+        {
+            background-color:#30b44a !important;
+        }
+
+        .RejectionColor
+        {
+            background-color:#ff6632 !important;
+        }
+        /****************** mobile **************************************/
+
+
+        
+        
+     
+        /****************** desktop **************************************/
+         @media screen and (min-width:692px)
+        {
+            .MyGrid
+            {
+                display:grid;
+                width:90vw;
+                height:4vw;
+                margin-left:5vw;
+                grid-template-columns:10fr 10fr 28fr 10fr 12fr 10fr 10fr 10fr;
+                grid-template-rows:auto;
+                border-top:0.1vw #AAA solid;
+                background:none;
+                /*background-color:green;*/
+            }
+
+            .MyGrid > div
+            {
+                font-size:1.4vw;
+                background-color:transparent;
+            }
+
+            .letter
+            {
+                grid-column:1/2;
+                grid-row:1;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background-color:aqua;
+                
+            }
+
+            .letter > img
+            {
+                width:25%;
+            }
+
+            .status
+            {
+                grid-column:2/3;
+                grid-row:1;
+                align-self:center;
+                justify-self:end;
+                padding:0;
+                background-color:aquamarine;
+            }
+
+            .status > img
+            {
+                display:none;
+            }
+
+            .status > div
+            {
+                display:block; text-align:right;
+            }
+
+            .surgeryName
+            {
+                grid-column:3/4;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                background-color:burlywood;
+            }
+
+            .surgeryCode
+            {
+                grid-column:4/5;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                text-align:right;
+                display:block;
+                background-color:darkseagreen;
+            }
+
+            .date
+            {
+                grid-column:5/6;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                background-color:chartreuse;
+            }
+
+            .firstName
+            {
+                grid-column:6/7;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                font-family:OpenSansHebrew;
+                background-color:cornflowerblue;
+            }
+
+            .lastName
+            {
+                grid-column:7/8;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                font-family:OpenSansHebrew;
+                background-color:cadetblue;
+                word-break:break-all;
+            }
+
+            .InsuredID
+            {
+                grid-column:8/9;
+                grid-row:1;
+                align-self: center;
+                justify-self:stretch;
+                padding:0;
+                margin:0;
+                border:0;
+                font-size:1.4vw;
+                cursor:pointer;
+                background-color:transparent;
+            }
+            
+            
+            .InsuredID:focus
+            {
+               /*outline:none;*/
+            }
+            
+            
+
+            .HeaderGrid
+            {
+                display:grid;
+                width:90vw;
+                height:3vw;
+                margin-left:5vw;
+                grid-template-columns:10fr 10fr 28fr 10fr 12fr 10fr 10fr 10fr;
+                grid-template-rows:auto;
+                /*background-color:yellow;*/
+            }
+
+            .HeaderGrid > div
+            {
+                height:initial;
+                padding:0;
+                margin:0;
+                align-self:center;
+                justify-self:stretch;
+                direction:rtl;
+                font-weight:bold;
+                font-size:1.3vw;
+                font-family:OpenSansHebrew;
+                color:black;
+                background-color:transparent;
+            }
+            
+            .sortable
+            {
+                cursor:pointer;
+            }
+            
+            .sortable:hover
+            {
+                text-decoration:underline;
+            }
+
+
+
+            .InsuredIDTitle,.firstNameTitle,.lastNameTitle,.surgeryCodeTitle,.surgeryNameTitle,.statusMobile,.dateTitle,.moreInfo
+            {
+                display:none;
+            }
+
+
+
+
+        }
+        /****************** desktop **************************************/
+        
+        
+       
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!--<div class="HeaderGrid">
+        <div class="letter">תשובה</div>
+        <div class="lastName">משפחה</div>
+        <div class="firstName">פרטי</div>
+        <div class="InsuredID">ת.ז.</div>
+        <div class="status">סטטוס</div>
+        <div class="surgeryName">שם ניתוח</div>
+        <div class="date">תאריך</div>
+        <div class="surgeryCode">קוד ניתוח</div>
+    </div>-->
+
+
+
+
+    <div class="MyGrid">
+
+        <div class="moreInfo" data-show="false" onclick="show_more_info()">מידע נוסף</div>
+
+        <div class="showLetterTitle">מכתב תשובה</div>
+        <div class="showLetter">הצג מכתב תשובה</div>
+        
+        <!--<div class="letter"><img src="../images/file.png" /></div>-->
+        
+        <div class="lastNameTitle">שם משפחה</div>
+        <div class="lastName">אורנשטיין</div>
+        
+        <div class="firstNameTitle">שם פרטי</div>
+        <div class="firstName">משה</div>
+        
+        <div class="InsuredIDTitle">ת.ז.</div>
+        <div class="InsuredID">032989653</div>
+        
+        <!--<div class="status"><img src="../images/redX.png" /><div>נדחה</div></div>-->
+        
+        <div class="statusMobile ApprovalColor">מאושר במושלם</div>
+        <div class="statusMobileBottom ApprovalColor"></div>
+
+        <div class="surgeryNameTitle">שם ניתוח</div>
+        <div class="surgeryName">טיפול ברך ימין</div>
+        
+        <div class="dateTitle">תאריך הבקשה</div>
+        <div class="date">21/11/19</div>
+        
+        <div class="surgeryCodeTitle">קוד ניתוח</div>
+        <div class="surgeryCode">61</div>
+
+    </div>
+
+
+    <div class="MyGrid">
+
+        <div class="moreInfo" data-show="false" onclick="show_more_info()">מידע נוסף</div>
+
+        <div class="showLetterTitle">מכתב תשובה</div>
+        <div class="showLetter">הצג מכתב תשובה</div>
+
+        <!--<div class="letter"><img src="../images/file.png" /></div>-->
+
+        <div class="lastNameTitle">שם משפחה</div>
+        <div class="lastName">אורנשטיין</div>
+
+        <div class="firstNameTitle">שם פרטי</div>
+        <div class="firstName">משה</div>
+
+        <div class="InsuredIDTitle">ת.ז.</div>
+        <div class="InsuredID">032989653</div>
+
+        <!--<div class="status"><img src="../images/redX.png" /><div>נדחה</div></div>-->
+
+        <div class="statusMobile ApprovalColor">מאושר במושלם</div>
+        <div class="statusMobileBottom ApprovalColor"></div>
+
+        <div class="surgeryNameTitle">שם ניתוח</div>
+        <div class="surgeryName">טיפול ברך ימין</div>
+
+        <div class="dateTitle">תאריך הבקשה</div>
+        <div class="date">21/11/19</div>
+
+        <div class="surgeryCodeTitle">קוד ניתוח</div>
+        <div class="surgeryCode">61</div>
+
+    </div>
+
+
+
+    <!--<div class="MyGrid">
+        <div class="letter"><img src="../images/file.png" /></div>
+        <div class="lastName">לוי</div>
+        <div class="firstName">דנה</div>
+        <div class="InsuredID">83730986</div>
+        <div class="status"><img src="../images/greenV.png" /><div>אושר</div></div>
+        <div class="surgeryName">טיפול ברך ימין / השתלה מלאה</div>
+        <div class="date">02/05/2012</div>
+        <div class="surgeryCode">65</div>
+    </div>-->
+
+    
+
+    <script>
+
+        function show_more_info()
+        {
+            if (event.target.dataset.show == "true")
+            {
+                event.target.parentNode.querySelector(".surgeryCodeTitle").style.display = 'none';
+                event.target.parentNode.querySelector(".surgeryCode").style.display = 'none';
+                event.target.parentNode.querySelector(".showLetterTitle").style.display = 'none';
+                event.target.parentNode.querySelector(".showLetter").style.display = 'none';
+                event.target.parentNode.querySelector(".statusMobileBottom").style.display = 'none';
+                event.target.parentNode.style.gridTemplateRows = "5.6vw 5.6vw 5.6vw 5.6vw";
+                event.target.dataset.show = "false";
+                return;
+            }
+
+            if (event.target.dataset.show == "false")
+            {
+                event.target.parentNode.querySelector(".surgeryCodeTitle").style.display = 'block';
+                event.target.parentNode.querySelector(".surgeryCode").style.display = 'block';
+                event.target.parentNode.querySelector(".showLetterTitle").style.display = 'block';
+                event.target.parentNode.querySelector(".showLetter").style.display = 'block';
+                event.target.parentNode.querySelector(".statusMobileBottom").style.display = 'block';
+                event.target.parentNode.style.gridTemplateRows = "5.6vw 5.6vw 5.6vw 5.6vw 5.6vw 5.6vw 5.6vw 8.6vw";
+                event.target.dataset.show = "true";
+                return;
+            }
+            
+        }
+
+        
+
+    </script>
+
+
+
+</body>
+
+</html>

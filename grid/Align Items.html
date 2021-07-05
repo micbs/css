@@ -6,20 +6,23 @@
 
     <title></title>
 
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    
+    <h2>work with justify-items and align-items</h2>
 
     <style>
 
         #MyGrid
         {
+            width:500px;
             display:grid;
-            width:50%;
-            
-            grid-template-columns:400px auto;
-            /*justify-content:space-around;*/
-            /*grid-template-rows:max-content;*/
+            grid-template-columns:100px 1fr 1fr;
+            justify-items: unset;
+            align-items:unset;
             outline:1px solid black;
         }
+
+        #MyGrid > div{width: 50px;}
 
     </style>
 
@@ -27,29 +30,15 @@
 
 <body>
 
-    Start
-
     <div id="MyGrid">
-        <div style="background-color:yellow">1111 222 3333</div>
+        <div style="background-color:yellow">1</div>
         <div style="margin-left:0px; background-color:red">2</div>
         <div style="background-color:green">3</div>
-        <div style="background-color:blue">4</div>
+        <div style="background-color:rgb(66, 218, 117)">44444 44444 4444</div>
         <div style="background-color:aqua">5</div>
         <div style="background-color:cornflowerblue">6</div>
         <div style="background-color:deeppink">7</div>
     </div>
 
-    End
-
 </body>
 </html>
-
-
-
-
-<!--
-    
-    
-
-
--->
