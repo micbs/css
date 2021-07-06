@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html>
+
 <html>
+
 <head>
 
     <title></title>
 
-
     <style>
 
-        table{width:800px; border-collapse:collapse; margin:auto;}
+        table{width:1000px; border-collapse:collapse; margin:auto;}
         tr{border-bottom:1px solid black}
-        td{direction:rtl; vertical-align:top; padding: 10px; background-color:white}
+        td{direction:rtl; vertical-align:top; padding: 10px; background-color:yellow}
 
     </style>
 
@@ -22,10 +23,9 @@
     <table id="myTable"></table>
 
 
-
     <script>
 
-        const NumberOfColumns = 4;
+        const NumberOfColumns = 3;
         const url = "https://benshachar.co.il/handlers/Api.ashx?getjsonfile=1&AllowOrigin=1";
         const MyPromise = fetch(url);
 
@@ -57,7 +57,6 @@
 
                     tr.appendChild(td);
 
-
                     if (objJson.length - 1 === i)
                     {
                         document.getElementById("myTable").appendChild(tr);
@@ -65,7 +64,6 @@
 
                     i++;
                 }
-
             });
 
     </script>
