@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+    
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        body
+        {
+            margin:30px;
+        }
+
+        .MyGrid
+        {
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px;
+        }
+
+        .MyGrid .card
+        {
+            display:flex; flex-direction:column; padding:30px; background-color:lightpink;
+        }
+
+        .MyGrid .title
+        {
+            text-align:center; font-size:2rem;
+        }
+
+        .MyGrid .description
+        {
+            margin-bottom:auto; padding:10px 0; direction:rtl; font-size:1rem;
+        }
+
+        .MyGrid img
+        {
+            width:100%; display:block;
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="MyGrid"></div>
+
+
+
+<script>
+
+    const url = "https://benshachar.co.il/handlers/Api.ashx?getjsonfile=1&AllowOrigin=1";
+    const picurl = "https://benshachar.co.il/pictures/";
+    const MyPromise = fetch(url);
+
+    MyPromise.then(function(response){
+        return response.text();
+    })
+    .then(function(text){
+        
+        const objJson = JSON.parse(text);
+       
+        for(var item of objJson)
+        {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            let div = document.createElement("div");
+            div.innerText = item.HebrewName;
+            div.classList.add("title");
+            card.appendChild(div);
+
+            div = document.createElement("div");
+            div.innerText = item.Description;
+            div.classList.add("description");
+            card.appendChild(div);
+
+            const pic = document.createElement("img");
+            pic.src = picurl + item.Pictures.Pic;
+            card.appendChild(pic);
+
+            document.querySelector(".MyGrid").appendChild(card);
+        }
+
+    });
+    
+</script>
+
+
+</body>
+</html>

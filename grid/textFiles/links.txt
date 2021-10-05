@@ -1,5 +1,3 @@
 ﻿
 
 https://learncssgrid.com/
-
-https://www.smashingmagazine.com/2020/01/understanding-css-grid-container/
