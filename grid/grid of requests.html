@@ -42,11 +42,11 @@
 
 
 
-        .MyGrid
+        .MyGrid11
         {
             display:grid;
             width:90vw;
-            height:18vw;
+            
             margin-left:5vw;
             grid-template-columns:20% 20% 20% 20% 20%;
             grid-template-rows:50% 50%;
@@ -55,14 +55,14 @@
         }
 
 
-        .MyGrid > div
+        .MyGrid11 > div
         {
             /*padding:2px 5px;*/
             font-size:3vw;
         }
 
 
-        .letter
+        .letter11
         {
             grid-column:1/2;
             grid-row:span 2;
@@ -70,14 +70,14 @@
             /*background-color:yellow;*/
         }
 
-        .letter > img
+        .letter11 > img
         {
             height:50%;
             margin:25% auto 0;
             display:block;
         }
 
-        .status
+        .status11
         {
             grid-column:5/6;
             grid-row:span 2;
@@ -85,18 +85,18 @@
             /*background-color:aqua;*/
         }
 
-        .status > img
+        .status11 > img
         {
             width:100%;
             display:block;
         }
 
-        .status > div
+        .status11 > div
         {
             display:none;
         }
 
-        .date
+        .date11
         {
             grid-column:4/5;
             text-align:right;
@@ -104,7 +104,7 @@
         }
 
 
-        .surgeryName
+        .surgeryName11
         {
             grid-column:2/4;
             text-align:right;
@@ -112,7 +112,7 @@
         }
 
 
-        .personId
+        .personId11
         {
             grid-column:4/5;
             text-align:right;
@@ -123,7 +123,7 @@
         }
 
 
-        .firstName
+        .firstName11
         {
             grid-column:3/4;
             text-align:right;
@@ -134,7 +134,7 @@
         }
 
 
-        .lastName
+        .lastName11
         {
             grid-column:2/3;
             text-align:right;
@@ -145,12 +145,12 @@
         }
 
 
-        .HeaderGrid
+        .HeaderGrid11
         {
            display:none;
         }
 
-        .surgeryCode
+        .surgeryCode11
         {
             display:none;
         }
@@ -174,7 +174,7 @@
             {
                 display:grid;
                 width:80vw;
-                height:4vw;
+                
                 margin-left:10vw;
                 grid-template-columns:10fr 10fr 20fr 10fr 10fr 10fr 10fr 10fr;
                 grid-template-rows:auto;
@@ -191,11 +191,12 @@
             .letter
             {
                 grid-column:1/2;
-                grid-row:1;
+               
                 height:60%;
                 align-self: center;
                 justify-self:end;
                 background-color:aqua;
+                
             }
 
             .letter > img
@@ -207,11 +208,12 @@
             .status
             {
                 grid-column:2/3;
-                grid-row:1;
+                
                 align-self:center;
                 justify-self:end;
                 padding:0;
                 background-color:aquamarine;
+               
             }
 
             .status > img
@@ -227,18 +229,19 @@
             .surgeryName
             {
                 grid-column:3/4;
-                grid-row:1;
+                
                 align-self: center;
                 justify-self:stretch;
                 padding:0;
                 margin:0;
                 background-color:burlywood;
+                
             }
 
             .surgeryCode
             {
                 grid-column:4/5;
-                grid-row:1;
+                
                 align-self: center;
                 justify-self:stretch;
                 padding:0;
@@ -246,58 +249,63 @@
                 text-align:right;
                 display:block;
                 background-color:darkseagreen;
+               
             }
 
             .date
             {
                 grid-column:5/6;
-                grid-row:1;
+                
                 align-self: center;
                 justify-self:stretch;
                 padding:0;
                 margin:0;
                 background-color:chartreuse;
+                
             }
 
             .firstName
             {
                 grid-column:6/7;
-                grid-row:1;
+                
                 align-self: center;
                 justify-self:stretch;
                 padding:0;
                 margin:0;
                 font-family:OpenSansHebrew;
                 background-color:cornflowerblue;
+                
             }
 
             .lastName
             {
                 grid-column:7/8;
-                grid-row:1;
+                
                 align-self: center;
                 justify-self:stretch;
                 padding:0;
                 margin:0;
                 font-family:OpenSansHebrew;
                 background-color:cadetblue;
+                
             }
 
             .personId
             {
                 grid-column:8/9;
-                grid-row:1;
+                
                 align-self: center;
                 justify-self:stretch;
                 padding:0;
                 margin:0;
                 background-color:darkorange;
+                
             }
 
 
             
 
-            .HeaderGrid
+            .HeaderGrid1111
             {
                 display:grid;
                 width:80vw;
@@ -308,7 +316,7 @@
                 /*background-color:yellow;*/
             }
 
-            .HeaderGrid > div
+            .HeaderGrid1111 > div
             {
                 height:initial;
                 padding:0;
@@ -331,32 +339,31 @@
 
 <body>
 
-
-    <div class="HeaderGrid">
+    <div class="MyGrid">
+    
         <div class="letter">תשובה</div>
-        <div class="lastName">משפחה</div>
-        <div class="firstName">פרטי</div>
-        <div class="personId">ת.ז.</div>
         <div class="status">סטטוס</div>
         <div class="surgeryName">שם ניתוח</div>
-        <div class="date">תאריך</div>
         <div class="surgeryCode">קוד ניתוח</div>
-    </div>
-
-
-    <div class="MyGrid">
+        <div class="date">תאריך</div>
+        <div class="firstName">פרטי</div>
+        <div class="lastName">משפחה</div>
+        <div class="personId">ת.ז.</div>
+        
+        
         <div class="letter"><img src="../images/file.png" /></div>
-        <div class="lastName">אורנשטיין</div>
-        <div class="firstName">משה</div>
-        <div class="personId">032989653</div>
         <div class="status"><img src="../images/redX.png" /><div>נדחה</div></div>
         <div class="surgeryName">טיפול ברך ימין</div>
-        <div class="date">21/11/2019</div>
         <div class="surgeryCode">61</div> 
-    </div>
-
-
-    <div class="MyGrid">
+        <div class="date">21/11/2019</div>
+        <div class="firstName">משה</div>
+        <div class="lastName">אורנשטיין</div>
+        <div class="personId">032989653</div>
+        
+        
+        
+        
+   
         <div class="letter"><img src="../images/file.png" /></div>
         <div class="lastName">לוי</div>
         <div class="firstName">דנה</div>
@@ -365,6 +372,7 @@
         <div class="surgeryName">טיפול ברך ימין / השתלה מלאה</div>
         <div class="date">02/05/2012</div>
         <div class="surgeryCode">65</div>
+
     </div>
 
     
