@@ -1,2 +1,9 @@
 ﻿
+***********************
+CSS width vs flex-basis
+***********************
+
+ Flex-basis is both width and height in a Flexbox, depending on the flex direction
+
 https://gedd.ski/post/the-difference-between-width-and-flex-basis/
+https://www.freecodecamp.org/news/flexboxs-flex-basis-explained-83d1a01413b7/
