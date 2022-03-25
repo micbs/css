@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body
+        {
+            margin: 0;
+        }
+
+        .snackbar
+        {
+            width: 100%;
+            position: fixed;
+            text-align: center;
+            transition:bottom 1s, opacity 1s;
+            /* background-color: yellow; */
+        }
+
+        .snackbar label
+        {
+            display: inline-block;
+            padding: 20px;
+            color: white;
+            background-color: black;
+        }
+
+        .hide
+        {
+            bottom: -100px;
+            opacity: 0;
+        }
+
+        .show
+        {
+            bottom: 40px;
+            opacity: 1;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>Snackbar Message</h1>
+    <h4>Snackbars provide brief messages about app processes at the bottom of the screen.</h4>
+
+    <button onclick="show_snackbar()">show snackbar</button>
+
+
+    <div class="snackbar hide">
+        <label>זוהי הודעת טקסט קצרה שנעלמת תוך 4 שניות</label>
+    </div>
+
+
+
+    <script>
+        function show_snackbar()
+        {
+            var snackbar = document.querySelector(".snackbar");
+            snackbar.className = "snackbar show";
+
+            setTimeout(function(){
+                snackbar.className = "snackbar hide";
+            }, 4000)
+        }
+    </script>
+
+</body>
+</html>
