@@ -5,8 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
+<style>
+    div
+    {
+        direction: rtl; padding: 10px; background-color: yellow;
+    }
+    .tooltip
+    {
+        height: 200px;
+        background-color: blueviolet;
+    }
+</style>
+
 </head>
 <body>
-    show tooltip
+    <div id="MyDiv">
+        כלב הוא שמו היומיומי של כלב הבית (שם מדעי: Canis lupus familiaris), תת-מין של הזאב המצוי (Canis lupus), ממשפחת הכלביים, מסדרת היונקים הטורפים.
+    </div>
+
+<script>
+
+
+document.getElementById("MyDiv").addEventListener("mouseover", (e) => {
+    
+    if(e.currentTarget.querySelector(".tooltip") === null)
+    {
+        const divToolTip = document.createElement("div");
+        divToolTip.className = "tooltip";
+        divToolTip.innerHTML = "12345678";
+        e.currentTarget.appendChild(divToolTip);
+    }       
+})
+
+
+
+document.getElementById("MyDiv").addEventListener("mouseout", (e) => {
+    
+    if(e.currentTarget.querySelector(".tooltip") !== null)
+    {
+        e.currentTarget.querySelector(".tooltip").remove();
+    }       
+})
+
+</script>
+
 </body>
 </html>
