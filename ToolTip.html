@@ -8,14 +8,33 @@
 
 
 <style>
-    div
+    #MyDiv
     {
         direction: rtl; padding: 10px; background-color: yellow;
+        position: relative; margin-top: 100px;
     }
     .tooltip
     {
-        height: 200px;
-        background-color: blueviolet;
+        padding: 5px;
+        position: absolute; bottom: 100%; right: 0;
+        /* background-color: blueviolet; */
+    }
+    .tooltip > div:nth-child(1)
+    {
+        background-color: #FDFAF6;  position: relative; padding: 10px;  border: 1px solid black; border-radius: 5px;
+    }
+    .tooltip > div:nth-child(2)
+    {
+        width: 20px; height: 20px;
+        position: relative;
+       box-sizing: border-box;
+        margin-left: auto; margin-right: auto;
+        right: 10px; top: -14.14px;
+        transform-origin: top right;
+        transform: rotate(-45deg);
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+        background-color: #FDFAF6;
     }
 </style>
 
@@ -34,7 +53,19 @@ document.getElementById("MyDiv").addEventListener("mouseover", (e) => {
     {
         const divToolTip = document.createElement("div");
         divToolTip.className = "tooltip";
-        divToolTip.innerHTML = "12345678";
+        
+
+        
+
+        const divText = document.createElement("div");
+        divText.innerHTML = "כלב הוא שמו היומיומי של כלב הבית";
+
+        const divTriangle = document.createElement("div");
+        
+
+
+        divToolTip.appendChild(divText);
+        divToolTip.appendChild(divTriangle);
         e.currentTarget.appendChild(divToolTip);
     }       
 })
