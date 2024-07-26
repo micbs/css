@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+
+    <style>
+       
+        body{margin:0}
+
+        img
+        {
+            width: 100%;
+            display: block;
+        }
+
+        .welcome-desktop
+        {
+            position: relative;
+            width: 47.7%;
+            margin-left: 23.6%;
+            padding: 8px 40px 8px 0;
+            box-sizing: border-box;
+            background-color: lightgray;
+        }
+
+        .welcome-desktop p
+        {
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        .left-side
+        {
+            position: absolute;
+            top: 0;
+            left: -100px;
+            width: 100px;
+            height: 100%;
+           overflow: hidden;
+        }
+
+        .left-side div
+        {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            transform-origin: top right;
+            transform: rotate(-60deg);
+            background-color: lightgray;
+        }
+
+
+        .right-side
+        {
+            position: absolute;
+            top: 0;
+            right:-100px;
+            width: 100px;
+            height: 100%;
+           
+            background-color: transparent;
+            /* z-index: -1; */
+        }
+
+        .right-side div
+        {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            transform-origin: top left;
+            transform: rotate(27deg);
+            background-color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<img src="images/Eyelid.jpg">
+
+
+<div class="welcome-desktop">
+    <p>
+        בוקר טוב בוקר טוב בוקר טוב בוקר טוב בוקר טוב בוקר טוב בוקר טוב
+    </p>
+    <div class="left-side">
+        <div></div>
+    </div>
+    <div class="right-side">
+        <div></div>
+    </div>
+</div>
+    
+   
+</body>
+</html>

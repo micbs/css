@@ -7,26 +7,43 @@
 
     <style>
        
-        body{margin:0}
+        body{margin:50px 0}
 
-        #container
+        .welcome-mobile
         {
-            position: relative;
-            width:400px;
-            height:400px;
-            background-color:green;
+            display: flex;
         }
 
+        .welcome-mobile p
+        {
+            width:70%;
+            padding: 10px;
+            margin: 0;
+            box-sizing: border-box;
+            direction: rtl;
+            background-color:lightgray;
+            z-index: 1;
+        }
 
-        #container div{
+        #triangle
+        {
+            width: 30%;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
             
-            width: 100%;
+        }
+
+        #triangle div
+        {
+            width: 1000px;
             height: 100%;
-            transform:rotate(130deg);
-            transform-origin:bottom right;
-            background-color: yellow;
-            
-            
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform:rotate(-60deg);
+            transform-origin:bottom left;
+            background-color: lightgray;
         }
 
     </style>
@@ -35,9 +52,16 @@
 
 <body>
 
-   <div id="container">
-    <div></div>
-   </div>
-
+    <div class="welcome-mobile">
+        <p>
+        בוקר טוב בוקר טוב בוקר טוב בוקר טוב
+        בוקר טוב בוקר טוב בוקר טוב בוקר טוב
+        בוקר טוב בוקר טוב בוקר טוב בוקר טוב
+        </p>
+        <div id="triangle">
+            <div></div>
+        </div>
+    </div>
+   
 </body>
 </html>
