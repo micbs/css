@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slide-in Animation</title>
+    <title></title>
 
     <style>
+        html,
         body {
             margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
         }
 
         section {
-
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            align-items: stretch;
-            overflow: hidden;
+            align-items: center;
+            background: white;
+            transform: translateY(100%);
+            transition: transform 1s ease-in-out;
         }
+
+        section.active {
+            transform: translateY(0);
+        }
+
+
+
 
         /* Slide-in for text */
         section p {
@@ -28,7 +45,7 @@
             line-height: 1.6;
             padding: 120px;
             margin: 0;
-            opacity: 0;
+
             box-sizing: border-box;
         }
 
@@ -38,26 +55,7 @@
             height: 100vh;
             display: block;
             object-fit: cover;
-            opacity: 0;
-        }
 
-
-        .fromLeft {
-            transform: translateX(-100%);
-            animation: slideIn 1s ease-out forwards;
-        }
-
-        .fromRight {
-            transform: translateX(100%);
-            animation: slideIn 1s ease-out forwards;
-        }
-
-
-        @keyframes slideIn {
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
         }
     </style>
 </head>
@@ -91,17 +89,9 @@
         <img src="images/brooke-cagle-191367-unsplash.jpg" alt="Interview Photo">
     </section>
 
-    <section>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
-            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
-            sint a amet?
-        </p>
-        <img src="images/alex-lambley-205711-unsplash.jpg" alt="Interview Photo">
-    </section>
 
     <section>
-        <img src="images/ana-maria-nichita-417521-unsplash.jpg" alt="Interview Photo">
+        <img src="images/tamara-bellis-246824-unsplash.jpg" alt="Interview Photo">
         <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
             Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
@@ -109,42 +99,67 @@
         </p>
     </section>
 
+
     <section>
         <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
             Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
             sint a amet?
         </p>
-        <img src="images/brooke-cagle-191367-unsplash.jpg" alt="Interview Photo">
+        <img src="images/philipe-cavalcante-539505-unsplash.jpg" alt="Interview Photo">
     </section>
 
 
+
+    <section>
+        <img src="images/elijah-hiett-240333-unsplash.jpg" alt="Interview Photo">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+    </section>
 
 
     <script>
 
-        const observer = new IntersectionObserver(entries =>
+        let currentIndex = 0;
+        let isScrolling = false;
+
+        const sections = document.querySelectorAll("section");
+
+        // Show the first section
+        sections[currentIndex].classList.add("active");
+
+        window.addEventListener("wheel", (e) =>
         {
-            entries.forEach(entry =>
+            if (isScrolling) return; // Prevent if already scrolling
+
+            if (e.deltaY > 0 && currentIndex < sections.length - 1)
             {
-                if (entry.isIntersecting)
+                isScrolling = true;
+                currentIndex++;
+                sections[currentIndex].classList.add("active");
+
+                setTimeout(() =>
                 {
-                    entry.target.children[0].classList.add("fromLeft");
-                    entry.target.children[1].classList.add("fromRight");
-                }
-            });
-        },
+                    isScrolling = false;
+                }, 1000); // 1 second delay
+            }
+            else if (e.deltaY < 0 && currentIndex > 0)
             {
-                threshold: 0.3
-            });
+                isScrolling = true;
+                sections[currentIndex].classList.remove("active");
+                currentIndex--;
 
-
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => observer.observe(section));
+                setTimeout(() =>
+                {
+                    isScrolling = false;
+                }, 1000); // 1 second delay
+            }
+        });
 
     </script>
-
-
 
 </body>
 
