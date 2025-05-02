@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide-in Animation</title>
+
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            overflow: hidden;
+        }
+
+        /* Slide-in for text */
+        section p {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            line-height: 1.6;
+            padding: 120px;
+            margin: 0;
+            opacity: 0;
+        }
+
+        /* Slide-in for image */
+        section img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            opacity: 0;
+        }
+
+
+        .fromLeft {
+            transform: translateX(-100%);
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .fromRight {
+            transform: translateX(100%);
+            animation: slideIn 1s ease-out forwards;
+        }
+
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+        <img src="images/alex-lambley-205711-unsplash.jpg" alt="Interview Photo">
+    </section>
+
+    <section>
+        <img src="images/ana-maria-nichita-417521-unsplash.jpg" alt="Interview Photo">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+    </section>
+
+    <section>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+        <img src="images/brooke-cagle-191367-unsplash.jpg" alt="Interview Photo">
+    </section>
+
+    <section>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+        <img src="images/alex-lambley-205711-unsplash.jpg" alt="Interview Photo">
+    </section>
+
+    <section>
+        <img src="images/ana-maria-nichita-417521-unsplash.jpg" alt="Interview Photo">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+    </section>
+
+    <section>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam labore animi eveniet asperiores praesentium!
+            Voluptatibus, facilis numquam impedit voluptates, hic labore nemo in maiores veniam necessitatibus veritatis
+            sint a amet?
+        </p>
+        <img src="images/brooke-cagle-191367-unsplash.jpg" alt="Interview Photo">
+    </section>
+
+
+
+
+    <script>
+
+        const observer = new IntersectionObserver(entries =>
+        {
+            entries.forEach(entry =>
+            {
+                if (entry.isIntersecting)
+                {
+                    entry.target.children[0].classList.add("fromLeft");
+                    entry.target.children[1].classList.add("fromRight");
+                }
+            });
+        },
+            {
+                threshold: 0.3
+            });
+
+
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => observer.observe(section));
+
+    </script>
+
+
+
+</body>
+
+</html>
