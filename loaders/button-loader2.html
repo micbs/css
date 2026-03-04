@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Button Spinner Example</title>
+
+    <style>
+        body {
+            display: flex;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #05454F;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:disabled {
+            /* background-color: #0F8899; */
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 3px solid rgba(255, 255, 255, 0);
+            border-top: 3px solid white;
+            border-left: 3px solid white;
+            border-right: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .reset-btn {
+            background-color: #6c757d;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="submitBtn">
+        <span id="btnText">Submit</span>
+        <span class="spinner" id="spinner"></span>
+    </button>
+
+    <button class="reset-btn" id="resetBtn">
+        Reset
+    </button>
+
+    <script>
+        const submitBtn = document.getElementById("submitBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const spinner = document.getElementById("spinner");
+        const btnText = document.getElementById("btnText");
+
+        submitBtn.addEventListener("click", () =>
+        {
+            if (submitBtn.disabled) return;
+
+            // Show spinner
+            spinner.style.display = "inline-block";
+            btnText.style.display = "none";
+
+            // Disable button
+            submitBtn.disabled = true;
+        });
+
+        resetBtn.addEventListener("click", () =>
+        {
+            spinner.style.display = "none";
+            btnText.style.display = "inline-block";
+            submitBtn.disabled = false;
+        });
+    </script>
+
+</body>
+
+</html>
